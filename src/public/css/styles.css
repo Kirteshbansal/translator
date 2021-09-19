@@ -1,0 +1,41 @@
+@keyframes bouncing-loader {
+    to {
+        opacity: 0.1;
+        transform: translateY(-16px);
+        -webkit-transform: translateY(-16px);
+        -moz-transform: translateY(-16px);
+        -ms-transform: translateY(-16px);
+        -o-transform: translateY(-16px);
+    }
+}
+
+.bouncing-loader {
+    display: flex;
+    justify-content: center;
+}
+
+.bouncing-loader > div {
+    margin: 0.5rem 0.2rem;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+}
+
+.bouncing-loader__default > div {
+    width: 16px;
+    height: 16px;
+    background: #8385aa;
+}
+
+.bouncing-loader__btn > div {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+}
+
+.bouncing-loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bouncing-loader > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
