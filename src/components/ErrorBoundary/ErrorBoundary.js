@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-    ebRoot: {
+const useStyles = (theme) => ({
+    root: {
         position: "fixed",
         left: "0",
         right: "0",
@@ -15,12 +14,15 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center",
     },
-
-    ebContainer: {
+    container: {
         textAlign: "center",
         padding: "0.5em",
+        fontSize: "1.15em",
     },
-}));
+    text: {
+        marginTop: "0.5em",
+    },
+});
 
 class ErrorBoundary extends Component {
     constructor(props) {
@@ -39,12 +41,13 @@ class ErrorBoundary extends Component {
 
     render() {
         const { classes } = this.props;
+
         if (this.state.hasError) {
             return (
-                <Box className={classes.rbRoot}>
-                    <Box className={classes.ebContainer}>
+                <Box className={classes.root}>
+                    <Box className={classes.container}>
                         <Typography>Oh no, an error! Something went wrong.</Typography>
-                        <Typography>Please try refreshing the page.</Typography>
+                        <Typography className={classes.text}>Please try refreshing the page.</Typography>
                     </Box>
                 </Box>
             );
