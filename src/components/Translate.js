@@ -183,7 +183,7 @@ const Translate = () => {
                     <Box className={classes.header}>
                         <img src={translatorLogo} alt="logo" className={classes.header__img} />
                         <Typography component="h4" color="textPrimary" className={classes.header__title}>
-                            Translator
+                            Easy Translator
                         </Typography>
                     </Box>
                     {!state.loading &&
